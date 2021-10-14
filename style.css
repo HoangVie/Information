@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient( 0deg, rgba(0, 0, 0, 0.8), transparent), url(./background/bgr.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 0 8%;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    padding-top: 2%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    z-index: 2;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+    width: 50%;
+}
+
+.active {
+    display: none;
+    position: absolute;
+    width: 30vw;
+    height: 100vh;
+    background: #000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.active:active {
+    display: block;
+}
+
+.text-box {
+    position: absolute;
+    bottom: 8%;
+}
+
+.text-box p {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.text-box h1 {
+    font-size: 70px;
+    line-height: 100px;
+    margin-left: -10px;
+}
+
+.text-box h1 span {
+    color: #dddddd;
+}
+
+span:nth-child(1) {
+    animation-name: neon;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+span:nth-child(2) {
+    animation-name: neon;
+    animation-duration: 6s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+span:nth-child(3) {
+    animation-name: neon;
+    animation-duration: 6s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+span:nth-child(4) {
+    animation-name: neon;
+    animation-duration: 6s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+}
+
+span:nth-child(5) {
+    animation-name: neon;
+    animation-duration: 6s;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+}
+
+span:nth-child(6) {
+    animation-name: neon;
+    animation-duration: 6s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes neon {
+    10% {
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff;
+    }
+}
+
+.text-box h3 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.text-box .connection {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.text-box a {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border: solid 2px #fff;
+}
+
+.icon {
+    position: absolute;
+    bottom: 8%;
+    right: 8%;
+    z-index: 2;
+}
+
+.icon a {
+    margin: 0 10px;
+}
+.fab,
+.fa-paper-plane {
+    font-size: 22px;
+}
+.fa-facebook {
+    color: #5269a6;
+}
+
+.fa-facebook:hover {
+    transform: scale(1.3);
+}
+
+.fa-paper-plane:hover {
+    transform: scale(1.3);
+}
+
+.fa-facebook-messenger {
+    color: #cb1ad1;
+}
+
+.fa-facebook-messenger:hover {
+    transform: scale(1.3);
+}
+
+.modal-box {
+    position: absolute;
+    width: 30vw;
+    min-width: 300px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    display: none;
+    animation: click .15s linear;
+    transform-origin: top left;
+}
+
+@keyframes click {
+    from {
+        transform: scale(0.4);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal-box:target {
+    visibility: visible;
+    display: block;
+}
+
+.modal-content {
+    margin-top: 25vh;
+    padding: 0 30px 30px;
+    line-height: 25px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 50vh;
+    right: 5px;
+}
